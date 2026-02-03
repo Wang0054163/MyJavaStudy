@@ -14,4 +14,12 @@ public class bikes extends automobiles{
     public void start() {
         System.out.println("自行车：跨上车座，开始蹬踏。");
     }
+    // 2. 实现父类的抽象方法（必须重写）
+    @Override
+    public void fuelUp() {
+        System.out.println("正在检查自行车制动系统...");
+    }
+    public void checkStatus() {
+        System.out.println("正在执行全车智能自检...");
+    }
 }
