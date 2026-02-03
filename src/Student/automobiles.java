@@ -3,16 +3,27 @@ package Student;
 import com.sun.org.apache.xpath.internal.objects.XString;
 
 public class automobiles {
+    //实现数据的封装  只能通过getter 和setter方法来获取数据
+    // 1.私有化属性：像胶囊一样把数据封起来
     private double fuel;
     private int years;
     private String brand;
-
+    // 2. 构造方法：出生时初始化数据
+    public automobiles() {
+        System.out.println("A vehicle has been created.");
+    }
+    // 3. Getter/Setter：对外开放的受控接口
     public int getYears() {
         return years;
     }
 
     public void setYears(int years) {
-        this.years = years;
+        // 封装的好处：可以在这里加限制条件
+        if (years > 0) {
+            this.years = years;
+        } else {
+            System.out.println("错误：年份必须大于0");
+        }
     }
 
     public double getFuel() {

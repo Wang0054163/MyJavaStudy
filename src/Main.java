@@ -25,26 +25,36 @@ public class Main {
         //使用方法
         bike.kick();
         car.key();
-        // 11. 测试方法重载
+        // 11.1 测试方法重载
         automobiles auto = new automobiles();
         auto.start();           // 调用无参版本
         auto.start("遥控钥匙");  // 调用带参版本
 
         System.out.println("---------多态展示---------");
 
-        // 2. 多态性：父类引用指向子类对象
+        // 11.2. 多态性：父类引用指向子类对象
         // 虽然类型都是 automobiles，但运行时的表现完全不同
         automobiles myCar = new cars();
         automobiles myBike = new bikes();
 
-        // 统一调用 start() 方法
+        // 11.2.1统一调用 start() 方法
         myCar.start();  // 输出轿车的启动方式
         myBike.start(); // 输出自行车的启动方式
 
-        // 3. 多态的应用：把不同车放进同一个数组
+        // 11.3. 多态的应用：把不同车放进同一个数组
         automobiles[] garage = {new cars(), new bikes(), new automobiles()};
         for (automobiles vehicle : garage) {
             vehicle.start(); // 自动根据对象实际类型执行对应代码
         }
+
+        //  12.封装的数据的使用 不能同public的student数据一样设置为S.ID,S.Name,只能通过setter和getter方法
+        // 封装的使用：通过 Setter 设值
+        myBike.setYears(2);
+        myBike.setFuel(0.0); // 自行车没有油，设为0
+        // 通过 Getter 取值并打印
+        System.out.println("我的自行车车龄是：" + myBike.getYears() + "年");
+        // 结合你之前的“多态”练习
+        myBike.start();
+
     }
 }
