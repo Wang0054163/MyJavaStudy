@@ -20,7 +20,8 @@ public class Main {
         System.out.println("Name : " + S.name+"\nAge : " + S.age+"\nid  : "+S.id+"\n");
 
         //对象初始化：正式买了一辆“车”放进刚才那个盒子里。内层初始化：实例化
-        cars car = new cars();
+        //car这个因为改了初始构造函数 必须得传参才可以，使用有参构造实例化（封装的体现）
+        cars car = new cars("奔驰", "50万", "250km/h");
         bikes bike = new bikes();
         //使用方法
         bike.kick();
@@ -34,7 +35,7 @@ public class Main {
 
         // 11.2. 多态性：父类引用指向子类对象
         // 虽然类型都是 automobiles，但运行时的表现完全不同
-        automobiles myCar = new cars();
+        automobiles myCar = new cars("奔驰", "50万", "250km/h");
         automobiles myBike = new bikes();
 
         // 11.2.1统一调用 start() 方法
@@ -42,7 +43,7 @@ public class Main {
         myBike.start(); // 输出自行车的启动方式
 
         // 11.3. 多态的应用：把不同车放进同一个数组
-        automobiles[] garage = {new cars(), new bikes(), new automobiles()};
+        automobiles[] garage = {new cars("奔驰", "50万", "250km/h"), new bikes(), new automobiles()};
         for (automobiles vehicle : garage) {
             vehicle.start(); // 自动根据对象实际类型执行对应代码
         }
@@ -55,6 +56,5 @@ public class Main {
         System.out.println("我的自行车车龄是：" + myBike.getYears() + "年");
         // 结合你之前的“多态”练习
         myBike.start();
-
     }
 }
