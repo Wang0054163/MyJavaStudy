@@ -30,4 +30,14 @@ public class automobiles {
     public void setBrand(String brand) {
         this.brand = brand;
     }
+
+    // 在 automobiles 类中添加
+    public void start() {
+        System.out.println("车辆启动中...");
+    }
+
+    // 这里的 start 方法就是重载，因为参数不同（有一个 String 类型参数）
+    public void start(String keyType) {
+        System.out.println("使用 " + keyType + " 启动车辆...");
+    }
 }

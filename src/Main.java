@@ -25,5 +25,26 @@ public class Main {
         //使用方法
         bike.kick();
         car.key();
+        // 11. 测试方法重载
+        automobiles auto = new automobiles();
+        auto.start();           // 调用无参版本
+        auto.start("遥控钥匙");  // 调用带参版本
+
+        System.out.println("---------多态展示---------");
+
+        // 2. 多态性：父类引用指向子类对象
+        // 虽然类型都是 automobiles，但运行时的表现完全不同
+        automobiles myCar = new cars();
+        automobiles myBike = new bikes();
+
+        // 统一调用 start() 方法
+        myCar.start();  // 输出轿车的启动方式
+        myBike.start(); // 输出自行车的启动方式
+
+        // 3. 多态的应用：把不同车放进同一个数组
+        automobiles[] garage = {new cars(), new bikes(), new automobiles()};
+        for (automobiles vehicle : garage) {
+            vehicle.start(); // 自动根据对象实际类型执行对应代码
+        }
     }
 }

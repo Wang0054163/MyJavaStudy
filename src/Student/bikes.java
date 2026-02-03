@@ -9,4 +9,9 @@ public class bikes extends automobiles{
     public void kick(){
         System.out.println("bikes has been stated with kick");
     }
+    // 在 bikes.java 中重写
+    @Override
+    public void start() {
+        System.out.println("自行车：跨上车座，开始蹬踏。");
+    }
 }
