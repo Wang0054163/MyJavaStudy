@@ -7,7 +7,17 @@ public  abstract class automobiles {
     // 1.私有化属性：像胶囊一样把数据封起来
     private double fuel;
     private int years;
-    private String brand;
+    // 1. Private: 只有我自己能看
+    private String engineSerial = "SN-998877";
+
+    // 2. Default (不写): 同一个包(Student)的小伙伴能看
+    String color = "红色";
+
+    // 3. Protected: 同包的小伙伴能看，远方的儿子(子类)也能看
+    protected double tankCapacity = 50.0;
+
+    // 4. Public: 全世界都能看
+    public String brand = "通用品牌";
     // 2. 构造方法：出生时初始化数据
     public automobiles() {
         System.out.println("A vehicle has been created.");
@@ -42,6 +52,10 @@ public  abstract class automobiles {
         this.brand = brand;
     }
 
+    // 为了让外部能看 private 属性，我们还是得提供一个 Getter
+    public String getEngineSerial() {
+        return this.engineSerial;
+    }
     // 在 automobiles 类中添加
     public void start() {
         System.out.println("车辆启动中...");
