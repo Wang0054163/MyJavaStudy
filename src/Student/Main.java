@@ -1,13 +1,10 @@
-import Student.student;
-import Student.cars;
-import Student.bikes;
-import Student.automobiles;
-import Student.Maintainable;
+package Student;
+//cars和bikes是分层继承 继承automobiles类
 public class Main {
     //Java 定义变量的标准公式：权限修饰符 + 静态修饰符 + 数据类型 + 变量名;
     // 我准备了一个私有的、全类共享的盒子，名字叫 car，这个盒子专门用来装 cars 类型的对象。”
     //   static (静态修饰符)
-    //    意思：这个变量属于类本身，而不是属于某个特定的“对象”。通俗理解：无论你创建多少个 Main 页面，car 这个变量在内存里永远只有一份，大家共享。
+    //    意思：这个变量属于类本身，而不是属于某个特定的“对象”。通俗理解：无论你创建多少个 Student.Main 页面，car 这个变量在内存里永远只有一份，大家共享。
     //    为什么要用它：因为你的 main 方法（入口）是 static 的，静态方法只能直接访问静态变量。
     //在外面定义是为了“让大家都能看见” 生命周期：因为它加了 static，这个车位在程序一启动时就存在了，直到程序关闭才拆除。
     private static cars car;
@@ -69,5 +66,17 @@ public class Main {
         //也可以在原来的抽象父类里 添加checkStatus方法 这样所有子类都可以用 用的时候在子类重写
         myBike.checkStatus();
         myBike.checkStatus();
+
+        //  14.修饰词应用
+        // 1. Public: 随便访问
+        System.out.println(myCar.brand); // ✅ OK
+        // 2. Protected & Default:
+        // 如果 Student.Main 在 src/Student 下，可以访问
+        // 如果 Student.Main 在 src 根目录下，这两行会报错
+        System.out.println(myCar.tankCapacity);
+        System.out.println(myCar.color);
+        // 3. Private: 绝对报错
+        // System.out.println(myCar.engineSerial); // ❌
+        System.out.println(myCar.getEngineSerial());
     }
 }
