@@ -24,6 +24,21 @@ public class cars extends automobiles implements Maintainable {
     public void key(){
         System.out.println("Car has been stated with key rotation");
     }
+
+    public void showAccess() {
+        // ✅ 可以直接获取：brand 是 public
+        System.out.println("品牌: " + brand);
+
+        // ✅ 可以直接获取：tankCapacity 是 protected
+        System.out.println("油箱容量: " + tankCapacity);
+
+        // ✅ 可以直接获取：color 是 default，且都在 Student 包下
+        System.out.println("颜色: " + color);
+
+        // ❌ 报错：engineSerial 是 private，子类也拿不到
+        // System.out.println(engineSerial);
+    }
+
     // 在 cars.java 中重写
     @Override
     public void start() {
