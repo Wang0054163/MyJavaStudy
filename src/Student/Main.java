@@ -1,5 +1,5 @@
 package Student;
-
+//cars和bikes是分层继承 继承automobiles类
 public class Main {
     //Java 定义变量的标准公式：权限修饰符 + 静态修饰符 + 数据类型 + 变量名;
     // 我准备了一个私有的、全类共享的盒子，名字叫 car，这个盒子专门用来装 cars 类型的对象。”

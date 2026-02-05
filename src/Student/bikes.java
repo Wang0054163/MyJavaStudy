@@ -1,5 +1,5 @@
 package Student;
-
+// bikes 是子类，automobiles 是父类 单层继承
 public class bikes extends automobiles{
     //new 的那一刻自动执行 必须和类名一模一样 (构造方法) 返回值类型绝对不能写
     public bikes() {
