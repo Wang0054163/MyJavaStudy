@@ -1,13 +1,15 @@
 package Student;
 // 混合继承：继承了 automobiles 的血缘，同时签署了 Maintainable 协议
 //正如你提到的，Java 类不支持同时继承多个父类（比如不能 extends A, B），所以我们必须结合**接口（Interface）**来完成。extend+implement
+// 1. IS-A 关系：cars 是一个 automobiles (继承自父类)
 public class cars extends automobiles implements Maintainable {
     // 定义成员变量（属性）
     private String name;
     private String price;
     private String topSpeed;
 
-
+    // 2. HAS-A 关系：cars 有一个发动机 (作为成员变量)
+    private String engineType = "V8";
 //    public cars(){
 //        System.out.println("A new cars has been created");
 //    }
@@ -51,8 +53,13 @@ public class cars extends automobiles implements Maintainable {
         System.out.println("正在加油");
     }
     // 3. 实现接口的方法（必须重写）（实现协议）
+//    @Override
+//    public void checkStatus() {
+//        System.out.println("混合继承体现：正在执行接口定义的自检程序...");
+//    }
+    // 3. 接口实现：cars 拥有了“可维护”的能力
     @Override
     public void checkStatus() {
-        System.out.println("混合继承体现：正在执行接口定义的自检程序...");
+        System.out.println("正在检查这台 " + engineType + " 发动机的状态...");
     }
 }
