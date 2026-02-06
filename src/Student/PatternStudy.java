@@ -12,6 +12,12 @@ public class PatternStudy {
 
         System.out.println("\n--- 3. 菱形三角形 (不含空格逻辑) ---");
         drawDiamond(n);
+
+        System.out.println("\n---4. 对角线图形 (i == j) ---");
+        drawDiagonal(n);
+
+        System.out.println("\n---5. 斜对角线图形 (i + j== n+1) ---");
+        drawDiagonal1(n);
     }
 
     //    嵌套循环 (Nested Loops)：
@@ -70,4 +76,45 @@ public class PatternStudy {
             System.out.println();
         }
     }
+    public static void drawDiagonal(int n) {
+        for (int i = 1; i <= n; i++) {       // i 代表行号
+            for (int j = 1; j <= n; j++) {   // j 代表列号
+                // 关键点：只有当行号等于列号时，才打印星号
+                if (i == j) {
+                    System.out.print("*");
+                } else {
+                    // 否则打印空格撑开位置
+                    System.out.print(" ");
+                }
+            }
+            // 每行结束换行
+            System.out.println();
+        }
+    }
+
+    public static void drawDiagonal1(int n) {
+        for (int i = 1; i <= n; i++) {       // i 代表行号
+            for (int j = 1; j <= n; j++) {   // j 代表列号
+                // 关键点：只有当行号+列号==n+1时，才打印星号
+                if (i + j==n+1) {
+                    System.out.print("*");
+                } else {
+                    // 否则打印空格撑开位置
+                    System.out.print(" ");
+                }
+            }
+            // 每行结束换行
+            System.out.println();
+        }
+    }
+//    public static void drawDiagonal1(int n) {
+//        for (int i = 1; i <= n; i++) {       // i 代表行号
+//            for (int j = 1; j <= n-i; j++) {   // j 代表列号
+//                // 关键点：只有当行号等于列号时，才打印星号
+//                    System.out.print(" ");
+//                }
+    //  System.out.print("*\n");  打完星号换行
+//            }
+//        }
+//    }
 }
