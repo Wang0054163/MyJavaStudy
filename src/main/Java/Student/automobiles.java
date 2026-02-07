@@ -1,6 +1,5 @@
 package Student;
 
-import com.sun.org.apache.xpath.internal.objects.XString;
 // 1. 添加 abstract 关键字，表示这是抽象蓝图  我们要把这个类设为“不可直接实例化”的概念，并定义一个强制性的规则：所有的车都必须能启动（start），但启动方式由子类决定。
 public  abstract class automobiles {
     //实现数据的封装  只能通过getter 和setter方法来获取数据

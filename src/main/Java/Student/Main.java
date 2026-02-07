@@ -11,7 +11,7 @@ public class Main {
     private static bikes bike;
     public static void main(String[] args) {
         //  10.类 对象的使用
-        student S = new student();// 创建对象 s
+        Student S = new Student();// 创建对象 s
         S.name = "Wang";
         S.age = 18;
         S.id=1;
