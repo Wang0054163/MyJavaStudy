@@ -27,3 +27,6 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+# 项目排除路径
+/src/main/
+/src/target/
