@@ -8,6 +8,24 @@
         <outputRelativeToContentRoot value="true" />
         <module name="MyJavaStudy" />
       </profile>
+      <profile name="Annotation profile for SpringBootStudy" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$PROJECT_DIR$/../../env/apache-maven-3.9.5/repo/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="SpringBootStudy" />
+      </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring-boot-study" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SpringBootStudy" options="-parameters" />
+      <module name="spring-boot-study" options="-parameters" />
+    </option>
   </component>
 </project>
